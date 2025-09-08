@@ -1,0 +1,5 @@
+{"unique_id": "user_001", "name": "Alice Johnson", "age": 28, "occupation": "Software Engineer", "location": "San Francisco, CA", "email": "alice.johnson@email.com"}
+{"unique_id": "user_002", "name": "Bob Smith", "age": 35, "occupation": "Data Scientist", "location": "New York, NY", "email": "bob.smith@email.com"}
+{"unique_id": "user_003", "name": "Carol Davis", "age": 42, "occupation": "Product Manager", "location": "Seattle, WA", "email": "carol.davis@email.com"}
+{"unique_id": "user_004", "name": "David Wilson", "age": 31, "occupation": "UX Designer", "location": "Austin, TX", "email": "david.wilson@email.com"}
+{"unique_id": "user_005", "name": "Emma Brown", "age": 29, "occupation": "Marketing Specialist", "location": "Chicago, IL", "email": "emma.brown@email.com"}
