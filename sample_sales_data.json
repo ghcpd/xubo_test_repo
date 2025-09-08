@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "product": "Apple iPhone 14",
+    "category": "Electronics",
+    "price": 999.99,
+    "quantity": 2,
+    "timestamp": "2023-01-15T10:30:00"
+  },
+  {
+    "id": 2,
+    "product": "Organic Banana",
+    "category": "Fruit",
+    "price": 1.50,
+    "quantity": 10,
+    "timestamp": "2023-01-15T11:45:22"
+  },
+  {
+    "id": 3,
+    "product": "Office Chair",
+    "category": "Furniture",
+    "price": 299.99,
+    "quantity": 1,
+    "timestamp": "2023-01-16T09:15:33"
+  },
+  {
+    "id": 4,
+    "product": "Python Programming Book",
+    "category": "Books",
+    "price": 45.00,
+    "quantity": 3,
+    "timestamp": "2023-02-01T14:20:15"
+  },
+  {
+    "id": 5,
+    "product": "Samsung Galaxy S23",
+    "category": "Electronics",
+    "price": 849.99,
+    "quantity": 1,
+    "timestamp": "2023-02-05T16:30:45Z"
+  },
+  {
+    "id": 6,
+    "product": "Red Apple",
+    "category": "Fruit",
+    "price": "invalid_price",
+    "quantity": 5,
+    "timestamp": "2023-02-10T12:00:00"
+  },
+  {
+    "id": 7,
+    "product": "Desk Lamp",
+    "category": "Furniture",
+    "price": 79.99,
+    "quantity": "invalid_quantity",
+    "timestamp": "2023-02-15T13:45:30"
+  },
+  {
+    "id": 8,
+    "product": "JavaScript Guide",
+    "category": "Books",
+    "price": null,
+    "quantity": null,
+    "timestamp": "invalid_timestamp"
+  },
+  {
+    "id": 9,
+    "product": "Orange",
+    "category": "Fruit",
+    "price": 2.25,
+    "quantity": 8,
+    "timestamp": "2023-03-01T08:30:15.123Z"
+  },
+  {
+    "id": 10,
+    "product": "Gaming Mouse",
+    "category": "Electronics",
+    "price": 65.50,
+    "quantity": 2,
+    "timestamp": "2023-03-15T19:20:40"
+  },
+  {
+    "id": 11,
+    "product": "Dining Table",
+    "category": "Furniture",
+    "price": 599.99,
+    "quantity": 1,
+    "timestamp": "2023-04-01T10:00:00"
+  },
+  {
+    "id": 12,
+    "product": "Data Science Handbook",
+    "category": "Books",
+    "price": 52.99,
+    "quantity": 2,
+    "timestamp": "2023-04-10T15:30:20"
+  }
+]
