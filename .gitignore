@@ -1,0 +1,5 @@
+# Ignore generated output files from sales processing
+cleaned_sales.json
+category_sales.json
+top_products.json
+monthly_sales.json
