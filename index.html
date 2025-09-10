@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinese Zodiac</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal-enter { opacity: 0; transform: translateY(10px); }
+    .modal-enter-active { opacity: 1; transform: translateY(0); transition: all 200ms; }
+    .modal-exit { opacity: 1; transform: translateY(0); }
+    .modal-exit-active { opacity: 0; transform: translateY(10px); transition: all 150ms; }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-900">
+  <header class="p-4 flex items-center justify-between max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold" id="title">十二生肖</h1>
+    <button id="langToggle" class="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">English</button>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-4">
+    <div id="grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+  </main>
+
+  <!-- Modal -->
+  <div id="overlay" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4">
+    <div id="modal" class="bg-white rounded shadow-lg max-w-md w-full p-6">
+      <button id="closeBtn" class="float-right text-gray-500 hover:text-gray-700">✕</button>
+      <h2 id="modalTitle" class="text-xl font-semibold mb-2"></h2>
+      <p class="mb-1" id="modalYear"></p>
+      <p class="mb-1" id="modalTraits"></p>
+    </div>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
