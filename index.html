@@ -10,6 +10,19 @@
     .modal-enter-active { opacity: 1; transform: translateY(0); transition: all 200ms; }
     .modal-exit { opacity: 1; transform: translateY(0); }
     .modal-exit-active { opacity: 0; transform: translateY(10px); transition: all 150ms; }
+
+    /* Fallback base styles when Tailwind CDN isn't available */
+    body { background: #f3f4f6; color: #111827; }
+    header { display:flex; align-items:center; justify-content:space-between; max-width: 64rem; margin: 0 auto; }
+    #grid.z-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    @media (min-width: 640px) { #grid.z-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (min-width: 768px) { #grid.z-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    #grid button { background:#fff; border-radius:0.5rem; box-shadow:0 1px 4px rgba(0,0,0,.1); transition: transform .15s, box-shadow .15s; padding:0.5rem; }
+    #grid button:hover { transform: scale(1.05); box-shadow:0 6px 18px rgba(0,0,0,.15); }
+    #grid img { width:100%; height:8rem; object-fit:cover; border-radius:0.5rem; }
+    #overlay { position:fixed; left:0; top:0; right:0; bottom:0; background:rgba(0,0,0,.5); display:flex; align-items:center; justify-content:center; padding:1rem; }
+    #overlay.hidden { display:none; }
+    #modal { background:#fff; border-radius:0.5rem; box-shadow:0 12px 30px rgba(0,0,0,.2); max-width:28rem; width:100%; padding:1.5rem; }
   </style>
 </head>
 <body class="bg-gray-100 min-h-screen text-gray-900">
@@ -19,7 +32,7 @@
   </header>
 
   <main class="max-w-5xl mx-auto p-4">
-    <div id="grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    <div id="grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 z-grid"></div>
   </main>
 
   <!-- Modal -->
