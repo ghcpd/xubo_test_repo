@@ -1,0 +1,110 @@
+[
+  {
+    "id": "rat",
+    "emoji": "🐭",
+    "name": "鼠",
+    "name_en": "Rat",
+    "year_range": "1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020, 2032",
+    "traits": ["机智", "敏捷", "有魅力"],
+    "traits_en": ["Intelligent", "Quick-witted", "Charming"]
+  },
+  {
+    "id": "ox",
+    "emoji": "🐮",
+    "name": "牛",
+    "name_en": "Ox",
+    "year_range": "1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021, 2033",
+    "traits": ["勤奋", "可靠", "坚韧"],
+    "traits_en": ["Diligent", "Reliable", "Persistent"]
+  },
+  {
+    "id": "tiger",
+    "emoji": "🐯",
+    "name": "虎",
+    "name_en": "Tiger",
+    "year_range": "1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022, 2034",
+    "traits": ["勇敢", "自信", "有领导力"],
+    "traits_en": ["Brave", "Confident", "Leader"]
+  },
+  {
+    "id": "rabbit",
+    "emoji": "🐰",
+    "name": "兔",
+    "name_en": "Rabbit",
+    "year_range": "1927, 1939, 1951, 1963, 1975, 1987, 1999, 2011, 2023, 2035",
+    "traits": ["温柔", "善良", "礼貌"],
+    "traits_en": ["Gentle", "Kind", "Polite"]
+  },
+  {
+    "id": "dragon",
+    "emoji": "🐲",
+    "name": "龙",
+    "name_en": "Dragon",
+    "year_range": "1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024, 2036",
+    "traits": ["强大", "自信", "有魅力"],
+    "traits_en": ["Powerful", "Confident", "Charismatic"]
+  },
+  {
+    "id": "snake",
+    "emoji": "🐍",
+    "name": "蛇",
+    "name_en": "Snake",
+    "year_range": "1929, 1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025, 2037",
+    "traits": ["智慧", "神秘", "优雅"],
+    "traits_en": ["Wise", "Mysterious", "Graceful"]
+  },
+  {
+    "id": "horse",
+    "emoji": "🐴",
+    "name": "马",
+    "name_en": "Horse",
+    "year_range": "1930, 1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026, 2038",
+    "traits": ["活力", "自由", "乐观"],
+    "traits_en": ["Energetic", "Free-spirited", "Optimistic"]
+  },
+  {
+    "id": "goat",
+    "emoji": "🐐",
+    "name": "羊",
+    "name_en": "Goat",
+    "year_range": "1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027, 2039",
+    "traits": ["温和", "有同情心", "艺术气质"],
+    "traits_en": ["Mild", "Compassionate", "Artistic"]
+  },
+  {
+    "id": "monkey",
+    "emoji": "🐵",
+    "name": "猴",
+    "name_en": "Monkey",
+    "year_range": "1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028, 2040",
+    "traits": ["机灵", "好奇", "幽默"],
+    "traits_en": ["Clever", "Curious", "Humorous"]
+  },
+  {
+    "id": "rooster",
+    "emoji": "🐔",
+    "name": "鸡",
+    "name_en": "Rooster",
+    "year_range": "1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029, 2041",
+    "traits": ["自信", "守时", "直率"],
+    "traits_en": ["Confident", "Punctual", "Straightforward"]
+  },
+  {
+    "id": "dog",
+    "emoji": "🐶",
+    "name": "狗",
+    "name_en": "Dog",
+    "year_range": "1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030, 2042",
+    "traits": ["忠诚", "诚实", "可靠"],
+    "traits_en": ["Loyal", "Honest", "Dependable"]
+  },
+  {
+    "id": "pig",
+    "emoji": "🐷",
+    "name": "猪",
+    "name_en": "Pig",
+    "year_range": "1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031, 2043",
+    "traits": ["善良", "慷慨", "真诚"],
+    "traits_en": ["Kind", "Generous", "Sincere"]
+  }
+]
