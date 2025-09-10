@@ -36,6 +36,11 @@
     @media (min-width: 768px) { #zodiac-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
     @media (min-width: 1024px) { #zodiac-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
     #modal-backdrop.hidden { display: none; }
+
+    @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(10px);} 100% { opacity: 1; transform: translateY(0);} }
+    @keyframes fadeOutDown { 0% { opacity: 1; transform: translateY(0);} 100% { opacity: 0; transform: translateY(10px);} }
+    .animate-fadeInUp { animation: fadeInUp 200ms ease-out; }
+    .animate-fadeOutDown { animation: fadeOutDown 200ms ease-in; }
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-rose-50 via-amber-50 to-emerald-50 text-gray-800">
