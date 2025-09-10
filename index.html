@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Zodiac Animals</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #fef7f7 0%, #fef2e7 50%, #fef9c3 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header styles */
+        header {
+            padding: 1.5rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .language-toggle {
+            background: #dc2626;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .language-toggle:hover {
+            background: #b91c1c;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+
+        /* Loading styles */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 0;
+        }
+
+        .spinner {
+            width: 3rem;
+            height: 3rem;
+            border: 2px solid #e5e7eb;
+            border-top: 2px solid #dc2626;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Grid styles */
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+            h1 { font-size: 2.25rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        /* Zodiac button styles */
+        .zodiac-button {
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .zodiac-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #fecaca;
+        }
+
+        .zodiac-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .zodiac-button:hover .zodiac-emoji {
+            animation: bounceLight 0.6s ease-out;
+        }
+
+        .zodiac-name {
+            font-weight: bold;
+            color: #1f2937;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .zodiac-alt-name {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        @media (min-width: 768px) {
+            .zodiac-emoji { font-size: 3rem; }
+        }
+
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .modal.show {
+            display: block;
+        }
+
+        .modal-backdrop {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            transition: opacity 0.3s;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            text-align: left;
+            width: 100%;
+            max-width: 32rem;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #6b7280;
+        }
+
+        .modal-emoji {
+            font-size: 4rem;
+            margin-bottom: 0.75rem;
+            animation: bounceLight 0.6s ease-out;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .modal-subtitle {
+            font-size: 1.125rem;
+            color: #6b7280;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-box {
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
+
+        .info-box h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box.years {
+            background: #fef2f2;
+            color: #991b1b;
+        }
+
+        .info-box.years h4 {
+            color: #7f1d1d;
+        }
+
+        .info-box.traits {
+            background: #fff7ed;
+            color: #c2410c;
+        }
+
+        .info-box.traits h4 {
+            color: #9a3412;
+        }
+
+        .info-box.description {
+            background: #fefce8;
+            color: #a16207;
+        }
+
+        .info-box.description h4 {
+            color: #92400e;
+        }
+
+        .modal-footer {
+            background: #f9fafb;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .modal-close-btn {
+            background: white;
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 0.875rem;
+            color: #374151;
+        }
+
+        .modal-close-btn:hover {
+            background: #f9fafb;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounceLight {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-10px); }
+            70% { transform: translateY(-5px); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 min-h-screen">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 data-zh="中国十二生肖" data-en="Chinese Zodiac Animals">
+                    Chinese Zodiac Animals
+                </h1>
+                <button id="languageToggle" class="language-toggle">
+                    <span>🈵</span>
+                    <span id="languageText">中文</span>
+                </button>
+            </div>
+            <p class="subtitle" data-zh="点击生肖动物了解更多信息" data-en="Click on a zodiac animal to learn more">
+                Click on a zodiac animal to learn more
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <span style="margin-left: 0.75rem; color: #6b7280;" data-zh="加载中..." data-en="Loading...">Loading...</span>
+            </div>
+
+            <!-- Zodiac Grid -->
+            <div id="zodiacGrid" class="zodiac-grid hidden">
+                <!-- Zodiac buttons will be inserted here dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-backdrop">
+            <div class="modal-overlay" aria-hidden="true"></div>
+            
+            <!-- Modal Content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- Close Button -->
+                    <button id="closeModal" class="modal-close">×</button>
+                    
+                    <div id="modalImage" class="modal-emoji">🐭</div>
+                    <h3 id="modalTitle" class="modal-title">Rat</h3>
+                    <p id="modalSubtitle" class="modal-subtitle">鼠</p>
+                </div>
+                
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="info-box years">
+                        <h4 data-zh="年份" data-en="Years">Years</h4>
+                        <p id="modalYears">2020, 2008, 1996...</p>
+                    </div>
+                    
+                    <div class="info-box traits">
+                        <h4 data-zh="性格特点" data-en="Traits">Traits</h4>
+                        <p id="modalTraits">Clever, adaptable, charming</p>
+                    </div>
+                    
+                    <div class="info-box description">
+                        <h4 data-zh="描述" data-en="Description">Description</h4>
+                        <p id="modalDescription">Description text here...</p>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button id="modalCloseBtn" class="modal-close-btn" data-zh="关闭" data-en="Close">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
