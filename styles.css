@@ -1,0 +1,26 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f6f8fb; }
+.top-bar { position: sticky; top: 0; background: white; padding: 12px; border-bottom: 1px solid #e5e7eb; }
+.top-bar input { width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid #cbd5e1; }
+
+.container { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; padding: 16px; }
+.left-panel, .right-panel { background: white; padding: 16px; border-radius: 16px; }
+
+.city-list { list-style: none; padding: 0; margin: 0; }
+.city-item { padding: 10px; margin: 8px 0; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; cursor: grab; }
+.city-item:active { cursor: grabbing; }
+
+.itinerary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card { border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; overflow: hidden; }
+.card-header { padding: 12px; background: #f1f5f9; cursor: pointer; user-select: none; }
+.card-body { padding: 12px; border-top: 1px solid #e5e7eb; overflow: hidden; max-height: 0; transition: max-height 0.4s ease; }
+.card.open .card-body { max-height: 600px; }
+
+.day-drop.drag-over { border: 2px dashed #94a3b8; }
+
+.destination { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 8px; padding: 8px; border: 1px solid #e2e8f0; border-radius: 10px; margin: 6px 0; background: #fbfdff; cursor: grab; }
+.destination input.note { padding: 6px 8px; border-radius: 8px; border: 1px solid #93c5fd; outline: none; }
+.destination input.note:focus { box-shadow: 0 0 0 3px rgba(59,130,246,0.35); }
+
+.summary { margin-top: 16px; padding: 10px; border-radius: 12px; background: #eff6ff; border: 1px solid #bfdbfe; }
+
+.json-preview { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 12px; overflow: auto; max-height: 220px; }
