@@ -59,6 +59,7 @@ function initDayCards() {
 
 function onDropToDay(e) {
   e.preventDefault();
+  e.stopPropagation();
   const payload = JSON.parse(e.dataTransfer.getData('text/plain'));
   const dayKey = e.currentTarget.dataset.day;
 
@@ -87,6 +88,7 @@ function renderItinerary() {
       row.addEventListener('dragover', (e) => e.preventDefault());
       row.addEventListener('drop', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const payload = JSON.parse(e.dataTransfer.getData('text/plain'));
         if (payload.type === 'move') {
           const moving = state[payload.fromDay].splice(payload.index, 1)[0];
