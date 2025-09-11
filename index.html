@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <input id="search" type="text" placeholder="Search cities or countries..." />
+  </div>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Available Cities</h2>
+      <ul id="cities" class="city-list"></ul>
+    </div>
+    <div class="right-panel">
+      <h2>Your Itinerary</h2>
+      <div id="itinerary" class="itinerary"></div>
+      <div class="summary">
+        <div>Total cities: <span id="totalCities">0</span></div>
+        <div>Unique countries: <span id="uniqueCountries">0</span></div>
+      </div>
+      <h3>Live JSON State</h3>
+      <pre id="jsonPreview" class="json-preview"></pre>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
