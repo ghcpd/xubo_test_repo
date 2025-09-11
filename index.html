@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Top search bar -->
+        <header class="top-bar">
+            <h1>Trip Planner</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search cities..." class="search-input">
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Left panel: Available cities -->
+            <aside class="left-panel">
+                <h2>Available Cities</h2>
+                <div id="cities-list" class="cities-list">
+                    <!-- Cities will be loaded here -->
+                </div>
+            </aside>
+
+            <!-- Right panel: Itinerary -->
+            <section class="right-panel">
+                <h2>Your Itinerary</h2>
+                <div id="itinerary" class="itinerary">
+                    <!-- Days will be created here -->
+                </div>
+                
+                <!-- Summary box -->
+                <div class="summary-box">
+                    <h3>Trip Summary</h3>
+                    <div class="summary-stats">
+                        <span id="total-cities">Cities: 0</span>
+                        <span id="unique-countries">Countries: 0</span>
+                    </div>
+                </div>
+
+                <!-- Live JSON preview -->
+                <div class="json-preview">
+                    <h3>Live State Preview</h3>
+                    <pre id="json-state">{}</pre>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
