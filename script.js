@@ -79,6 +79,9 @@ function renderItinerary() {
       card.classList.toggle('open');
     });
 
+    // Allow dropping on header (append to day)
+    addDropHandlers(header, dayKey);
+
     // Drop handling on the day body
     addDropHandlers(body, dayKey);
 
