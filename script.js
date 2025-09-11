@@ -27,6 +27,10 @@ function createCityItem(city, country) {
     draggedData = { city, country, from: 'cities' };
     e.dataTransfer.setData('text/plain', JSON.stringify(draggedData));
   });
+  // Fallback for environments where dataTransfer isn't populated
+  el.addEventListener('mousedown', () => {
+    draggedData = { city, country, from: 'cities' };
+  });
   return el;
 }
 
@@ -41,6 +45,11 @@ function createDestItem(entry, day, index) {
   el.addEventListener('dragstart', (e) => {
     draggedData = { city: entry.city, country: entry.country, from: { day, index } };
     e.dataTransfer.setData('text/plain', JSON.stringify(draggedData));
+  });
+
+  // Fallback for environments where dataTransfer isn't populated
+  el.addEventListener('mousedown', () => {
+    draggedData = { city: entry.city, country: entry.country, from: { day, index } };
   });
 
   // Update note inline
