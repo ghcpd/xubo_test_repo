@@ -85,8 +85,7 @@ function renderItinerary() {
       row.addEventListener('dragstart', (e) => {
         e.dataTransfer.setData('text/plain', JSON.stringify({ type: 'move', fromDay: day, index: idx }));
       });
-      row.addEventListener('dragover', (e) => e.preventDefault());
-      row.addEventListener('drop', (e) => {
+      const handleDrop = (e) => {
         e.preventDefault();
         e.stopPropagation();
         const payload = JSON.parse(e.dataTransfer.getData('text/plain'));
@@ -99,16 +98,22 @@ function renderItinerary() {
           state[day].splice(idx, 0, { city: payload.city, country: payload.country, note: '' });
           renderItinerary();
         }
-      });
+      };
+      row.addEventListener('dragover', (e) => e.preventDefault());
+      row.addEventListener('drop', handleDrop);
 
       const label = document.createElement('div');
       label.textContent = `${item.city} - ${item.country}`;
+      label.addEventListener('dragover', (e) => e.preventDefault());
+      label.addEventListener('drop', handleDrop);
 
       const note = document.createElement('input');
       note.type = 'text';
       note.className = 'note';
       note.placeholder = 'Add note...';
       note.value = item.note || '';
+      note.addEventListener('dragover', (e) => e.preventDefault());
+      note.addEventListener('drop', handleDrop);
       note.addEventListener('input', () => { item.note = note.value; updateSummary(); updateJSON(); });
 
       row.appendChild(label);
