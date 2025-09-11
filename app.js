@@ -42,6 +42,8 @@ function initDayCards() {
     const body = document.createElement('div');
     body.className = 'card-body';
     body.dataset.day = dKey;
+    body.setAttribute('role', 'region');
+    body.setAttribute('aria-label', `Drop area ${dKey}`);
 
     card.appendChild(header);
     card.appendChild(body);
