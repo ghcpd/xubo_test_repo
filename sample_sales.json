@@ -1,0 +1,144 @@
+[
+  {
+    "id": 1,
+    "product": "Apple",
+    "category": "Fruit",
+    "price": 1.5,
+    "quantity": 10,
+    "timestamp": "2024-01-15T10:30:00"
+  },
+  {
+    "id": 2,
+    "product": "Laptop",
+    "category": "Electronics",
+    "price": 999.99,
+    "quantity": 2,
+    "timestamp": "2024-01-16T14:20:00"
+  },
+  {
+    "id": 3,
+    "product": "Chair",
+    "category": "Furniture",
+    "price": 150.0,
+    "quantity": 4,
+    "timestamp": "2024-01-17T09:15:00"
+  },
+  {
+    "id": 4,
+    "product": "Python Book",
+    "category": "Books",
+    "price": 45.99,
+    "quantity": 3,
+    "timestamp": "2024-01-18T16:45:00"
+  },
+  {
+    "id": 5,
+    "product": "Orange",
+    "category": "Fruit",
+    "price": 2.0,
+    "quantity": 15,
+    "timestamp": "2024-01-20T11:00:00"
+  },
+  {
+    "id": 6,
+    "product": "Smartphone",
+    "category": "Electronics",
+    "price": 699.99,
+    "quantity": 5,
+    "timestamp": "2024-02-01T13:30:00"
+  },
+  {
+    "id": 7,
+    "product": "Desk",
+    "category": "Furniture",
+    "price": 250.0,
+    "quantity": 2,
+    "timestamp": "2024-02-05T10:00:00"
+  },
+  {
+    "id": 8,
+    "product": "JavaScript Book",
+    "category": "Books",
+    "price": 39.99,
+    "quantity": 5,
+    "timestamp": "2024-02-10T15:20:00"
+  },
+  {
+    "id": 9,
+    "product": "Banana",
+    "category": "Fruit",
+    "price": 1.2,
+    "quantity": 20,
+    "timestamp": "2024-02-12T09:30:00"
+  },
+  {
+    "id": 10,
+    "product": "Laptop",
+    "category": "Electronics",
+    "price": 1299.99,
+    "quantity": 3,
+    "timestamp": "2024-02-15T14:00:00"
+  },
+  {
+    "id": 11,
+    "product": "Table",
+    "category": "Furniture",
+    "price": 300.0,
+    "quantity": 1,
+    "timestamp": "2024-03-01T10:30:00"
+  },
+  {
+    "id": 12,
+    "product": "Apple",
+    "category": "Fruit",
+    "price": 1.5,
+    "quantity": 25,
+    "timestamp": "2024-03-05T11:45:00"
+  },
+  {
+    "id": 13,
+    "product": "Tablet",
+    "category": "Electronics",
+    "price": 499.99,
+    "quantity": 4,
+    "timestamp": "2024-03-10T16:00:00"
+  },
+  {
+    "id": 14,
+    "product": "Python Book",
+    "category": "Books",
+    "price": 45.99,
+    "quantity": 2,
+    "timestamp": "2024-03-12T13:20:00"
+  },
+  {
+    "id": 15,
+    "product": "Invalid Price Item",
+    "category": "Electronics",
+    "price": "not-a-number",
+    "quantity": 3,
+    "timestamp": "2024-03-15T10:00:00"
+  },
+  {
+    "id": 16,
+    "product": "Invalid Quantity Item",
+    "category": "Fruit",
+    "price": 5.0,
+    "quantity": "invalid",
+    "timestamp": "2024-03-16T11:00:00"
+  },
+  {
+    "id": 17,
+    "product": "Invalid Timestamp Item",
+    "category": "Books",
+    "price": 20.0,
+    "quantity": 2,
+    "timestamp": "not-a-date"
+  },
+  {
+    "id": 18,
+    "product": "Missing Fields Item",
+    "category": "Furniture",
+    "timestamp": "2024-03-18T12:00:00"
+  }
+]

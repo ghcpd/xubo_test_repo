@@ -1,0 +1,28 @@
+# Generated output files
+cleaned_sales.json
+category_sales.json
+top_products.json
+monthly_sales.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
